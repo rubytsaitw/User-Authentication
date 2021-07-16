@@ -3,6 +3,8 @@ const mongoose = require('mongoose')
 
 const app = express()
 
+const User = require('../user')
+
 // Mongoose
 mongoose.connect('mongodb://localhost/authentication', { useNewUrlParser: true, useUnifiedTopology: true })
 
