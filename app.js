@@ -1,9 +1,10 @@
 const express = require('express')
 const mongoose = require('mongoose')
+const exphbs = require('express-handlebars');
 
 const app = express()
 
-const User = require('../user')
+const User = require('./models/user')
 
 // Mongoose
 mongoose.connect('mongodb://localhost/authentication', { useNewUrlParser: true, useUnifiedTopology: true })
@@ -18,9 +19,13 @@ db.once('open', () => {
   console.log('mongodb connected!')
 })
 
+// Handlebars
+app.engine('hbs', exphbs({ defaultLayout: 'main', extname: '.hbs' }))
+app.set('view engine', 'hbs')
+
 // Express
 app.get('/', (req, res) => {
-  res.send('login page')
+  res.render('login')
 })
 
 app.listen(3000, () => {
