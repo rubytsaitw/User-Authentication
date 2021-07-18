@@ -34,9 +34,7 @@ router.post('/', (req, res) => {
         res.render('login', { alert })
       }
       else {
-        console.log(user[0]._id)
         res.cookie('userId', user[0]._id)
-        res.cookie('email', user[0].email)
         res.render('welcome', { name: user[0].firstName })
       }
     })
