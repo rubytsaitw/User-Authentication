@@ -5,7 +5,7 @@
 ## Function List - 功能列表
 
 - 使用者輸入email & password
-- 帳密皆正確的話回傳welcome page
+- 帳密皆正確的話回傳welcome page，並記憶cookie，下次登入直接進入welcome page
 - 若帳號或密碼在資料庫中比對不到，回傳"Not registered" 或 “Ｗrong Password"
 
 ## Environment SetUp - 環境建置
